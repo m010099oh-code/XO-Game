@@ -16,6 +16,7 @@ return{
                 elemen.innerHTML = '';
                 elemen.style.background = 'black';
                 elemen.style.color = '#00ff2a';
+                elemen.style.boxShadow = '0px 0px 0px 3px #00ff2a inset';
             })
         }, 3000)
 
