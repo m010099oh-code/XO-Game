@@ -4,47 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <meta name="keywords" content="xo game">
+    <meta name="keywords" content="xo game, XO Game, x o game, X O Game, XO game">
     <script src="learn.js" defer></script>
 </head>
 <body>
     <div class="cotainer">
         <div id="parent" class="cell1">
+            <div class="parentOfTitle">
+                <div class="title">X O <span id="span">Game</span></div>
+            </div>
             <div class="row1" id="row">
-                <div onclick="play(this.id)" id="item1" class="item"></div>
-                <div onclick="play(this.id)" id="item2" class="item"></div>
-                <div onclick="play(this.id)" id="item3" class="item"></div>
+                <div onclick="oneR().play(this.id)" id="item1" class="item"></div>
+                <div onclick="oneR().play(this.id)" id="item2" class="item"></div>
+                <div onclick="oneR().play(this.id)" id="item3" class="item"></div>
             </div>
 
             <div class="row2" id="row">
-                <div onclick="play(this.id)" id="item4" class="item"></div>
-                <div onclick="play(this.id)" id="item5" class="item"></div>
-                <div onclick="play(this.id)" id="item6" class="item"></div>
+                <div onclick="oneR().play(this.id)" id="item4" class="item"></div>
+                <div onclick="oneR().play(this.id)" id="item5" class="item"></div>
+                <div onclick="oneR().play(this.id)" id="item6" class="item"></div>
             </div>
 
             <div class="row3" id="row">
-                <div onclick="play(this.id)" id="item7" class="item"></div>
-                <div onclick="play(this.id)" id="item8" class="item"></div>
-                <div onclick="play(this.id)" id="item9" class="item"></div>
+                <div onclick="oneR().play(this.id)" id="item7" class="item"></div>
+                <div onclick="oneR().play(this.id)" id="item8" class="item"></div>
+                <div onclick="oneR().play(this.id)" id="item9" class="item"></div>
             </div>
+        </div>
+        <div class="parentOfBtns">
+            <button class="change">One Mood</button>
+            <button id="with">With Mood</button>
         </div>
     </div>
 
 
     <style>
-        
+        *{
+            font-family: sans-serif;
+            margin: 2px;
+            padding: 0;
+        }
+        .cotainer{
+            display: flex;
+        }
         .item{
-            
             background-color: black;
-            color: aliceblue;
+            color: rgb(0, 255, 8);
             font-family: sans-serif;
             font-size: 70px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: solid 1px rgb(0, 255, 94);
-            height: 150px;
-            width: 150px;
+            height: 25vmin;
+            width: 25vmin;
+            box-shadow: 0px 0px 0px 3px rgb(0, 255, 64) inset;
+            cursor: pointer;
+        }
+        .item:hover{
+            transform: scale(1.05);
         }
         #row{
             display: flex;
@@ -52,19 +69,79 @@
             align-items: center;
         }
         body{
-            background: gray;
+            background: rgb(0, 0, 0);
         }
         .container{
             display: flex;
             justify-content: center;
             align-items: center;
         }
+        .title{
+            width: 200px;
+            height: 50px;
+            background: black;
+            box-shadow: 0px 0px 2px 2.5px rgb(0, 255, 64) inset;
+            color: aliceblue;
+            text-align: center;
+            font-size: 35px;
+        }
+        .parentOfTitle{
+            display: flex;
+            justify-content: center;
+        }
+        .change{
+            width: 200px;
+            height: 50px;
+            background: black;
+            box-shadow: 0px 0px 2px 2.5px rgb(0, 255, 64) inset;
+            color: aliceblue;
+            text-align: center;
+            font-size: 30px;
+            border: none;
+            padding: 10px;
+            transition: width .2s;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: rgb(45, 45, 45);
+        }
+        span{
+            color: blue;
+        }
+        #with{
+            width: 200px;
+            height: 50px;
+            background: black;
+            box-shadow: 0px 0px 2px 2.5px rgb(0, 255, 64) inset;
+            color: aliceblue;
+            text-align: center;
+            font-size: 30px;
+            border: none;
+            padding: 10px;
+            transition: width .2s;
+        }
+        #with:hover{
+            background-color: rgb(45, 45, 45);
+        }
+
+        .parentOfBtns{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        @media (min-width: 200px) and (max-width: 500px) {
+            .cotainer{
+                flex-direction: column;
+            }
+        }
+
     </style>
 
     
 </body>
 </html>
-
 
 
 
