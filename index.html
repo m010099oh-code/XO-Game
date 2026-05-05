@@ -5,38 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <meta name="keywords" content="xo game, XO Game, x o game, X O Game, XO game">
-    <script src="learn.js" defer></script>
 </head>
 <body>
     <div class="cotainer">
+        <div class="details">
+            <p>Styles</p>
+            <ul>
+                <li onclick="Default()">Default Mood</li>
+                <li onclick="blue()">Blue Style</li>
+                <li onclick="red()">Red Style</li>
+                <li onclick="yellow()">Yellow Style</li>
+            </ul>
+        </div>
         <div id="parent" class="cell1">
             <div class="parentOfTitle">
                 <div class="title">X O <span id="span">Game</span></div>
             </div>
             <div class="row1" id="row">
-                <div onclick="oneR().play(this.id)" id="item1" class="item"></div>
-                <div onclick="oneR().play(this.id)" id="item2" class="item"></div>
-                <div onclick="oneR().play(this.id)" id="item3" class="item"></div>
+                <div id="item1" class="item"></div>
+                <div id="item2" class="item"></div>
+                <div id="item3" class="item"></div>
             </div>
 
             <div class="row2" id="row">
-                <div onclick="oneR().play(this.id)" id="item4" class="item"></div>
-                <div onclick="oneR().play(this.id)" id="item5" class="item"></div>
-                <div onclick="oneR().play(this.id)" id="item6" class="item"></div>
+                <div id="item4" class="item"></div>
+                <div id="item5" class="item"></div>
+                <div id="item6" class="item"></div>
             </div>
 
             <div class="row3" id="row">
-                <div onclick="oneR().play(this.id)" id="item7" class="item"></div>
-                <div onclick="oneR().play(this.id)" id="item8" class="item"></div>
-                <div onclick="oneR().play(this.id)" id="item9" class="item"></div>
+                <div id="item7" class="item"></div>
+                <div id="item8" class="item"></div>
+                <div id="item9" class="item"></div>
             </div>
         </div>
         <div class="parentOfBtns">
-            <button class="change">One Mood</button>
-            <button id="with">With Mood</button>
+            <div class="Xscore"></div>
+            <div class="Oscore"></div>
+            <button class="change">Single Mood</button>
+            <button class="with">Group Mood</button>
         </div>
     </div>
-
 
     <style>
         *{
@@ -46,6 +55,14 @@
         }
         .cotainer{
             display: flex;
+        }
+        p{margin: 5px;}
+        .details{
+            height: 30px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            overflow: hidden;
+            border: solid .5px white;
         }
         .item{
             background-color: black;
@@ -81,9 +98,11 @@
             height: 50px;
             background: black;
             box-shadow: 0px 0px 2px 2.5px rgb(0, 255, 64) inset;
-            color: aliceblue;
-            text-align: center;
+            color: rgb(0, 255, 64);
             font-size: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .parentOfTitle{
             display: flex;
@@ -94,8 +113,7 @@
             height: 50px;
             background: black;
             box-shadow: 0px 0px 2px 2.5px rgb(0, 255, 64) inset;
-            color: aliceblue;
-            text-align: center;
+            color: rgb(0, 255, 64);
             font-size: 30px;
             border: none;
             padding: 10px;
@@ -108,13 +126,12 @@
         span{
             color: blue;
         }
-        #with{
+        .with{
             width: 200px;
             height: 50px;
             background: black;
             box-shadow: 0px 0px 2px 2.5px rgb(0, 255, 64) inset;
-            color: aliceblue;
-            text-align: center;
+            color: rgb(0, 255, 64);
             font-size: 30px;
             border: none;
             padding: 10px;
@@ -135,9 +152,39 @@
             .cotainer{
                 flex-direction: column;
             }
+            .details{
+                position: absolute;
+                top: 85%;
+                left: 30%;
+            }
+        }
+
+        .Xscore, .Oscore{
+            width: 200px;
+            height: 50px;
+            color: aliceblue;
+            background-color: black;
+            box-shadow: 0px 0px 0px .5px white inset;
+            font-size: 40px;
+        }
+        .Oscore::before{
+            content:"O: ";
+        }
+        .Xscore:before{
+            content:"X: ";
+        }
+
+        li:hover{
+            background: gray;
+            cursor: pointer;
+        }
+        .details:hover{
+            cursor: pointer;
         }
 
     </style>
+
+    <script src="learn.js"></script>
 
     
 </body>
